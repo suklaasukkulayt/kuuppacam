@@ -1,4 +1,5 @@
-# kuuppacam
+# kuuppacam  
+Made for stardance competition, more info in my devlogs there  
 diy surveillance camera made with IP camera and an old android phone.  
 Features: live video, live audio  
 NO AI USED
