@@ -1,3 +1,4 @@
+//there isn't much to this page, it just displays the video and audio feed from the camera.
 //you might need to change the ip address in the src attribute of the img and audio tags to match your camera's ip address.
 <!DOCTYPE html>
 <html>
@@ -11,9 +12,11 @@
         <h1>Surveillance Camera</h1>
         <img 
         src="http://192.168.100.20:8080/video"/>
-        <audio controls>
+        <audio controls autoplay muted>
             <source src="http://192.168.100.20:8080/audio.wav" type="audio/wav">
         </audio>
         <p>KuuppaCam</p>
+        <p>Refresh the page if something isn't working correctly.</p>
+        <p>Also the audio has a delay if it isn't started immediately.</p>
     </body>
 </html>
