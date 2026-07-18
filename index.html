@@ -3,20 +3,22 @@ you need to change the ip address in the src attribute of the img and audio tags
 
 <!DOCTYPE html>
 <html>
-    <style>
-        img  {
-            max-width: 100%;
-            max-height: 90%;
-        }
-    </style>
-    <body>
-        <h1>Surveillance Camera</h1>
-        <img src="http://192.168.100.20:8080/video" alt="Video feed not configured"/>
+    <body style="background-image: url(./bg.jpg); width: 100vh; height: 97vh; background-size: cover;">
+        <div>
+        <h1 style="color: darksalmon; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Surveillance Camera</h1>
+        <input type="text" id="ipAddress" placeholder="Enter camera IP address">
+        <input type="submit" value="Submit">
+        <img style="max-width: 100%; max-height: 90%;" src="http://192.168.100.20:8080/video" alt="Video feed not configured"></img>
         <audio controls autoplay muted>
             <source src="http://192.168.100.20:8080/audio.wav" type="audio/wav">
         </audio>
-        <p>KuuppaCam</p>
-        <p>Refresh the page if something isn't working correctly.</p>
-        <p>Also the audio has a delay if it isn't started immediately.</p>
+        </div>
+
+        <div style="color: blueviolet;">
+        <p style="background-color: antiquewhite; width: fit-content;">KuuppaCam</p>
+        <p style="background-color: antiquewhite; width: fit-content;">Refresh the page if something isn't working correctly.</p>
+        <p style="background-color: antiquewhite; width: fit-content;">Also the audio has a delay if it isn't started immediately.</p>
+        </div>
+
     </body>
 </html>
