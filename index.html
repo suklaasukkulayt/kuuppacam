@@ -1,6 +1,3 @@
-<!--there isn't much to this page, it just displays the video and audio feed from the camera.
-you need to change the ip address in the src attribute of the img and audio tags to match your camera's ip address. -->
-
 <!DOCTYPE html>
 <html>
     <title>Surveillance Camera</title>
@@ -42,17 +39,17 @@ you need to change the ip address in the src attribute of the img and audio tags
             <h1 style="color: darksalmon; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Surveillance Camera</h1>
 
             <div class="row">
-                <input type="text" id="ipAddress" value="192.168.100.20" placeholder="Enter camera IP address">
+                <input type="text" id="ipAddress" placeholder="Enter camera IP address">
                 <button id="applyButton" type="button">Submit</button>
             </div>
 
             <div class="row">
-                <img id="videoFeed" src="https://192.168.100.20:8080/video" alt="Video feed not configured">
+                <img id="videoFeed" alt="Video feed not configured">
             </div>
 
             <div class="row">
                 <audio id="audioFeed" controls autoplay muted>
-                    <source src="https://192.168.100.20:8080/audio.wav" type="audio/wav">
+                    <source src="" type="audio/wav">
                 </audio>
             </div>
         </div>
@@ -72,7 +69,7 @@ you need to change the ip address in the src attribute of the img and audio tags
             function normalizeBaseUrl(value) {
                 const raw = (value || '').trim();
                 if (!raw) {
-                    return 'https://192.168.100.20:8080';
+                    return '';
                 }
 
                 const withoutProtocol = raw.replace(/^https?:\/\//i, '').replace(/\/$/, '');
@@ -98,6 +95,14 @@ you need to change the ip address in the src attribute of the img and audio tags
             function updateCameraFeed() {
                 const baseUrl = normalizeBaseUrl(ipInput.value);
                 const cacheBuster = `?ts=${Date.now()}`;
+
+                if (!baseUrl) {
+                    videoFeed.removeAttribute('src');
+                    audioFeed.innerHTML = '<source src="" type="audio/wav">';
+                    audioFeed.load();
+                    return;
+                }
+
                 const videoUrl = `${baseUrl}/video${cacheBuster}`;
                 const audioUrl = `${baseUrl}/audio.wav${cacheBuster}`;
 
