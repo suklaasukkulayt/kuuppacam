@@ -1,0 +1,21 @@
+<!--there isn't much to this page, it just displays the video and audio feed from the camera.
+you need to change the ip address in the src attribute of the img and audio tags to match your camera's ip address. -->
+
+<!DOCTYPE html>
+<html>
+    <style>
+        img  {
+            max-width: 100%;
+            max-height: 90%;
+        }
+    </style>
+    <body>
+        <h1>Surveillance Camera</h1>
+        <img src="http://your-ip-here:8080/video" alt="Video feed not configured"/>
+        <audio controls autoplay muted>
+            <source src="http://your-ip-here:8080/audio.wav" type="audio/wav">
+        </audio>
+        <p>KuuppaCam (old)</p>
+        <p>Refresh the page if something isn't working correctly.</p>
+    </body>
+</html>
