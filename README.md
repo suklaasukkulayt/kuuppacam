@@ -14,3 +14,4 @@ Github copilot is used in the new version to add recording and easy ip changing.
 
 
 idea from my friend @Makkonen (hack club username)  
+<img width="280" height="274" alt="kuuppacam-icon" src="https://github.com/user-attachments/assets/04dc2ace-a52b-4686-965f-37be9d086ccd" />
