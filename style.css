@@ -1,0 +1,28 @@
+            body {
+                background-color: aliceblue;
+                padding: 5px;
+                font-family: Arial, sans-serif;
+            }
+
+            .row {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                margin-bottom: 12px;
+            }
+
+            input[type="text"] {
+                padding: 6px;
+                min-width: 220px;
+            }
+
+            button {
+                padding: 6px 12px;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 90%;
+                display: block;
+            }
